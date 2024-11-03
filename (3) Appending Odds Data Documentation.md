@@ -52,7 +52,9 @@ By the end of the `main()` function, a refined UFC event dataset with betting od
 
 ## Execution Flow
 
-The program starts by executing the `main()` function, which loads the UFC event and odds datasets, filters events by date, appends odds data, identifies missing values, and saves the processed data. Here’s a detailed step-by-step breakdown:
+The program starts by executing the `main()` function, which loads the UFC event and odds datasets, filters events by date, appends odds data, identifies missing values, and saves the processed data. 
+
+Here’s a detailed step-by-step breakdown:
 
 ### 1. Loading the Datasets
 
