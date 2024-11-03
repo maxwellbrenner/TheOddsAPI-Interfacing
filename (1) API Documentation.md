@@ -1,6 +1,6 @@
-# API Interfacing (TheOddsAPI) | Historical MMA Odds Data
+# API Interfacing (`TheOddsAPI`) | Historical MMA Odds Data
 
-This program retrieves historical odds data for MMA events from TheOddsAPI, cleans and processes the odds, calculates implied probabilities, and saves the data into a structured CSV file. 
+This program retrieves historical odds data for MMA events from `TheOddsAPI`, cleans and processes the odds, calculates implied probabilities, and saves the data into a structured CSV file. 
 
 This tool is valuable for analysts seeking detailed betting data on MMA events, with data formatted for analysis and further processing.
 
@@ -10,7 +10,7 @@ This tool is valuable for analysts seeking detailed betting data on MMA events, 
 
 The `main()` function orchestrates the odds retrieval and data processing by following these steps:
 
-1. **Load Masterlist and Define Date Range**: Loads the event masterlist (CSV file) to filter event dates within a specified range.
+1. **Load Masterlist and Define Date Range**: Loads the `event_masterlist` (CSV file) to filter event dates within a specified range. This file is generated using the `UFCStats Scraper`.
 
 2. **Filter Event Dates**: Calls `get_event_dates_between()` to filter events based on `start_date` and `end_date`, applying a 12-hour offset to each date for standardized times.
 
