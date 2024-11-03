@@ -30,7 +30,7 @@ The program begins by loading an existing `cleaned_event_masterlist.csv` file, w
 This program processes raw betting odds data to align it with the UFC event data, making it suitable for appending. The key preprocessing steps include:
 
 #### Filtering Odds Data by Date Range
-The program filters odds data to match the event date range from `event_masterlist.csv`, ensuring that only relevant betting data is retained.
+The program filters odds data to match the event date range from `cleaned_event_masterlist.csv`, ensuring that only relevant betting data is retained.
 
 #### Converting Odds Formats
 American-style odds are converted to implied probabilities, enabling accurate calculation of average and best odds across multiple bookmakers.
@@ -44,7 +44,7 @@ The processed odds data is prepared for integration with the UFC event data in t
 
 ### 3. Appending Odds Data Program - `(3) Appending Odds Data.ipynb`
 
-In the final stage, this notebook matches and appends odds data to each fight in `event_masterlist.csv`. It performs the following key functions:
+In the final stage, this notebook matches and appends odds data to each fight in `cleaned_event_masterlist.csv`. It performs the following key functions:
 
 #### Matching Odds to Fights
 The program matches betting odds to each fight record based on:
