@@ -92,7 +92,7 @@ The program then iterates through each event date in the filtered list. For each
 - **Timestamp**: `2024-08-24T12:00:00Z`
 - **Fighter A**: `"Fighter A Name"`
 - **Fighter B**: `"Fighter B Name"`
-- **Odds**: {"Bookmaker": "DraftKings", "Odds Price": `-150`}
+- **Odds**: {"Bookmaker": `"DraftKings"`, "Odds Price": `-150`}
 
 ### 4. Saving Odds Data to CSV
 
@@ -122,9 +122,9 @@ The `parse_odds_data()` function organizes the odds data for each event by ident
 #### Example of Parsed Data Structure
 - **Event Key**: (`"Fighter A Name"`, `"Fighter B Name"`, `"2024-08-24T12:00:00Z"`)
   - **Fighter A**:
-    - Bookmaker: "DraftKings", Odds Price: `-150`
+    - Bookmaker: `"DraftKings"`, Odds Price: `-150`
   - **Fighter B**:
-    - Bookmaker: "FanDuel", Odds Price: `+130`
+    - Bookmaker: `"FanDuel"`, Odds Price: `+130`
 
 ### 7. Calculating Average and Best Odds
 
