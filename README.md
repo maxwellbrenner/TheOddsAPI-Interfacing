@@ -1,7 +1,5 @@
 # UFC Odds Data Integration Pipeline
 
-![README Banner](images%20(UFCStats.com)/UFCStats%20-%20README%20Banner.png)
-
 ## Project Functionality
 
 This project provides a three-stage pipeline to interface with UFC data, preprocess betting odds, and append them to detailed fight data. The result is a consolidated dataset that combines event details, fighter statistics, and odds information. The project workflow is organized as follows:
