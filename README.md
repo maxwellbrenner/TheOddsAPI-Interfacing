@@ -2,9 +2,11 @@
 
 ## Project Functionality
 
-This project provides a three-stage pipeline to interface with UFC data, preprocess betting odds, and append them to detailed fight data. The result is a consolidated dataset that combines event details, fighter statistics, and odds information. The project workflow is organized as follows:
+This project provides a three-stage pipeline to interface with UFC data, preprocess betting odds, and append them to detailed fight data. The result is a consolidated dataset that combines event details, fighter statistics, and odds information. 
 
-1. **API Interfacing**: The first notebook interfaces with the UFC API to retrieve event, fight, and fighter information.
+The project workflow is organized as follows:
+
+1. **API Interfacing**: The first notebook interfaces with TheOddsAPI to retrieve event, fight, and fighter information.
 2. **Odds Preprocessing**: The second notebook preprocesses raw odds data by structuring, filtering, and calculating implied probabilities.
 3. **Appending Odds Data**: The final notebook integrates odds into the UFC data, appending calculated average and best odds for each fight.
 
@@ -21,7 +23,7 @@ This initial program interfaces with the UFC API to gather core data for each UF
 - **Fight Information**: winner, method of victory, round and time of victory, weight class, title fight status, and links to fight-specific stats.
 - **Fighter Statistics**: attributes like height, reach, and date of birth for each fighter in the event.
 
-The data is compiled into an intermediate file, `event_masterlist.csv`, which is ready for preprocessing in the next notebook.
+The program begins by loading an existing `cleaned_event_masterlist.csv` file, which contains UFC event dates. It then filters these dates based on a specified date range. After identifying the relevant event dates, the program requests historical betting odds for each date from The Odds API. These odds are compiled into a CSV file, named dynamically based on the date range, which is used for further integration with UFC event data in subsequent notebooks.
 
 ### 2. Odds Preprocessing Program - `(2) Odds Preprocessing.ipynb`
 
