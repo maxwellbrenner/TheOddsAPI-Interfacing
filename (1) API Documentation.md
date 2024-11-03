@@ -90,9 +90,9 @@ The program then iterates through each event date in the filtered list. For each
 
 #### Example of Retrieved Odds Data
 - **Timestamp**: `2024-08-24T12:00:00Z`
-- **Fighter A**: "Fighter A Name"
-- **Fighter B**: "Fighter B Name"
-- **Odds**: {"Bookmaker": "DraftKings", "Odds Price": -150}
+- **Fighter A**: `"Fighter A Name"`
+- **Fighter B**: `"Fighter B Name"`
+- **Odds**: {"Bookmaker": "DraftKings", "Odds Price": `-150`}
 
 ### 4. Saving Odds Data to CSV
 
@@ -109,8 +109,8 @@ The `calculate_implied_probability_american_odds()` function converts American o
 - **Output**: A float representing implied probability, rounded to two decimal places.
 
 #### Example of Implied Probability Calculation
-- **American Odds**: +150
-- **Implied Probability**: 0.4 (or 40%)
+- **American Odds**: `+150`
+- **Implied Probability**: `0.4` (or `40%`)
 
 ### 6. Structuring Odds Data for Each Fighter
 
@@ -120,28 +120,28 @@ The `parse_odds_data()` function organizes the odds data for each event by ident
 - **Output**: None, as it updates `fights_with_odds` with organized data for each fighter.
 
 #### Example of Parsed Data Structure
-- **Event Key**: ("Fighter A Name", "Fighter B Name", "2024-08-24T12:00:00Z")
+- **Event Key**: (`"Fighter A Name"`, `"Fighter B Name"`, `"2024-08-24T12:00:00Z"`)
   - **Fighter A**:
-    - Bookmaker: "DraftKings", Odds Price: -150
+    - Bookmaker: "DraftKings", Odds Price: `-150`
   - **Fighter B**:
-    - Bookmaker: "FanDuel", Odds Price: +130
+    - Bookmaker: "FanDuel", Odds Price: `+130`
 
 ### 7. Calculating Average and Best Odds
 
-For each event, the `calculate_averages_and_best_odds()` function calculates the average and best odds for each fighter, based on implied probability. It also computes the implied probability difference between the average and best odds, which helps assess the potential value in the odds variance across bookmakers.
+For each event, the `calculate_averages_and_best_odds()` function calculates the average and best odds for each fighter, based on implied probability. It also computes the `implied probability difference` between the `average` and `best` odds, which helps assess the potential value in the odds variance across bookmakers.
 
 - **Input**: The main `fights_with_odds` dictionary containing all odds data.
 - **Output**: None, as it updates `fights_with_odds` in place with calculated averages and implied probability differences.
 
 #### Example of Calculated Averages and Best Odds
 - **Fighter A**:
-  - Average Odds: -155
-  - Best Odds: -150
-  - Implied Probability Difference: 1.5%
+  - Average Odds: `-155`
+  - Best Odds: `-150`
+  - Implied Probability Difference: `1.5%`
 - **Fighter B**:
-  - Average Odds: +115
-  - Best Odds: +120
-  - Implied Probability Difference: 0.7%
+  - Average Odds: `+115`
+  - Best Odds: `+120`
+  - Implied Probability Difference: `0.7%`
 
 ### 8. Displaying Structured Odds Data
 
@@ -154,10 +154,10 @@ The `format_odds_display()` function prints the odds data for each fighter in a 
 
 The CSV file produced by this program includes the following columns:
 
-- **Timestamp**: The date and time of the event.
-- **Home Team**: The name of Fighter A.
-- **Away Team**: The name of Fighter B.
-- **Bookmaker**: The name of the bookmaker providing the odds.
+- **Timestamp**: The `date` and `time` of the event.
+- **Home Team**: The `name` of `Fighter A`.
+- **Away Team**: The `name` of `Fighter B`.
+- **Bookmaker**: The `name` of the bookmaker providing the odds.
 - **Odds Price**: The American odds price for the given fighter.
 - **Market**: The betting market (e.g., `h2h` for head-to-head).
 - **Implied Probability**: Calculated implied probability from American odds for each fighter.
