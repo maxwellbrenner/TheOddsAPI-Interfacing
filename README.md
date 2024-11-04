@@ -16,7 +16,8 @@ The project workflow is organized as follows:
 
 ### 1. API Interfacing Program - `(1) API Interfacing.ipynb`
 
-This program interfaces with `TheOddsAPI` to gather closing lines for each UFC fight dating back to `2020-06-06` -- First day `TheOddsAPI` began archiving UFC `h2h` odds. 
+This program interfaces with `TheOddsAPI` to gather closing lines for each UFC fight dating back to `2020-06-06`, which is the first day `TheOddsAPI` began archiving UFC `h2h` odds. 
+
 It collects essential details such as:
 - **Event Details**: name, date, location.
 - **Fight Information**: winner, method of victory, round and time of victory, weight class, title fight status, and links to fight-specific stats.
