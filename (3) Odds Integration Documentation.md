@@ -20,10 +20,10 @@ The following steps outline each part of the process:
 
 5. **Save Processed Data**:
 #### Exports two files
-A file with fights that could not be matched with odds:
-    (1) `fights_with_nan_odds.csv`
-A cleaned dataset with appended odds data, dynamically named based on the specified date range:
-    (2) `event_masterlist_with_odds ({start_date} to {end_date}).csv`
+    (1) A file with fights that could not be matched with odds:
+         -- `fights_with_nan_odds.csv`
+    (2) A cleaned dataset with appended odds data, dynamically named based on the specified date range:
+         -- `event_masterlist_with_odds ({start_date} to {end_date}).csv`
 
 ---
 
@@ -101,11 +101,11 @@ After processing, the program saves the cleaned dataset with appended odds data 
 
 #### Example of Final CSV Output
 
-The final output file `event_masterlist_with_odds ({start_date} to {end_date}).csv` includes columns with fight details and betting odds data:
+Each row in the final CSV output represents a single fight, including event details, fighter information, and appended betting odds data.
 
-| Timestamp               | Home Team          | Away Team       | Commence Time         | Bookmaker | Market | Outcome Name       | Odds Price | Fighter A Avg Odds | Fighter A Best Odds | Fighter B Avg Odds | Fighter B Best Odds |
-|-------------------------|--------------------|-----------------|-----------------------|-----------|--------|--------------------|------------|--------------------|---------------------------------------|---------------------|---------------------|
-| 2024-08-24T11:55:39Z    | Albert Odzimkowski | David Hosek     | 2024-08-24T17:00:00Z  | Bovada    | h2h    | Albert Odzimkowski | -185       | -180               | {'Odds': -185, 'Bookmaker': 'Bovada'} | -140               | {'Odds': -140, 'Bookmaker': 'LowVig.ag'} |
+| event_name                         | event_date   | event_location            | winner        | fighter_a_name   | fighter_b_name   | weightclass | method_of_victory     | round_of_victory | time_of_victory | time_format | referee         | title_fight | gender | Fighter A Odds                                                                                                             | Fighter A Avg Odds | Fighter A Best Odds               | Fighter B Odds                                                                                                             | Fighter B Avg Odds | Fighter B Best Odds               |
+|------------------------------------|--------------|---------------------------|---------------|------------------|------------------|-------------|-----------------------|------------------|-----------------|-------------|-----------------|-------------|--------|----------------------------------------------------------------------------------------------------------------------------|---------------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------|---------------------|------------------------------------|
+| UFC Fight Night: Cannonier vs. Borralho | 2024-08-24   | Las Vegas, Nevada, USA    | Caio Borralho | Caio Borralho    | Jared Cannonier  | Middleweight | Decision - Unanimous | 5                | 5:00            | 5           | Dan Miragliotta | False       | men    | [{"Bookmaker": "Caesars", "Odds Price": -275}, {"Bookmaker": "BetRivers", "Odds Price": -250}, ...] | -259.0              | {"Odds": -245, "Bookmaker": "FanDuel"} | [{"Bookmaker": "Caesars", "Odds Price": 225}, {"Bookmaker": "BetRivers", "Odds Price": 200}, ...] | 212.0               | {"Odds": 225, "Bookmaker": "Caesars"} |
 
 #### Output File Descriptions
 
