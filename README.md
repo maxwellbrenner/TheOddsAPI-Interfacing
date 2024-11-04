@@ -54,7 +54,8 @@ This program preprocesses cleaned UFC event data to standardize fighter names an
 
 ### 3. Odds Integration Program - `(3) Odds Integration.ipynb`
 
-In the final stage, this notebook matches and appends (closing) odds in `mma_odds_({start_date} to {end_date}).csv` to each fight in `preprocessed_event_masterlist.csv`. 
+In the final stage, this notebook matches and appends (closing) odds in `mma_odds_({start_date} to {end_date}).csv` 
+to each fight in `preprocessed_event_masterlist.csv`. 
 
 1. **Load and Filter Event Data**: Loads `preprocessed_event_masterlist.csv` and filters the data within a specified date range.
    
