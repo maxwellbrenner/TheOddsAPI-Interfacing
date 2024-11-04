@@ -16,18 +16,32 @@ The project workflow is organized as follows:
 
 ### 1. API Interfacing Program - `(1) API Interfacing.ipynb`
 
-This program interfaces with `TheOddsAPI` to gather closing lines for each UFC fight dating back to `2020-06-06`, which is the first day `TheOddsAPI` began archiving UFC `h2h` odds. 
+This program interfaces with `TheOddsAPI` to retrieve closing lines for UFC fights, covering events from `June 6, 2020` onward – the first date `TheOddsAPI` began archiving UFC `head-to-head` odds.
 
-It collects essential details such as:
-- **Event Details**: name, date, location.
-- **Fight Information**: winner, method of victory, round and time of victory, weight class, title fight status, and links to fight-specific stats.
-- **Fighter Statistics**: attributes like height, reach, and date of birth for each fighter in the event.
+1. **Load Event Master List**: It begins by loading an existing `cleaned_event_masterlist.csv` file. This file contains a historical list of UFC event dates, which are essential for cross-referencing with TheOddsAPI data.
+   
+2. **Filter Event Dates by Date Range**: The program filters the event dates within a specified date range, which can be customized. A 12-hour offset is applied to each event date to standardize times across time zones.
 
-The program begins by loading an existing `cleaned_event_masterlist.csv` file, which contains UFC event dates. It then filters these dates based on a specified date range. After identifying the relevant event dates, the program requests historical betting odds for each date from The Odds API. These odds are compiled into a CSV file, named dynamically based on the date range, which is used for further integration with UFC event data in subsequent notebooks.
+3. **Retrieve Historical Odds**: For each filtered event date, the program queries TheOddsAPI to retrieve the historical odds data for that date. The odds are retrieved in the "head-to-head" format and include details such as:
+   - **Event Date and Time**: Specific timestamps of the events.
+   - **Fighter Odds**: Head-to-head betting lines for each fighter.
+   - **Bookmaker and Market Data**: Information about the bookmakers providing odds and the types of odds markets available (e.g., head-to-head).
+
+4. **Save Odds Data to CSV**: All odds data is saved into a CSV file, dynamically named according to the specified date range. The CSV format includes essential fields, making it compatible for further data analysis and integration with UFC event details in other notebooks.
+
+## Data Collected
+
+The data collected includes:
+
+- **Event Details**: Information about each event, including the event date, home team, and away team (fighters).
+- **Betting Odds**: Closing odds for each event, covering the head-to-head market and including details for each fighter's price (odds).
+- **Bookmaker Information**: Bookmaker details and the specific market for each betting outcome.
 
 ### 2. Odds Preprocessing Program - `(2) Odds Preprocessing.ipynb`
 
-This program processes raw betting odds data to align it with the UFC event data, making it suitable for appending. The key preprocessing steps include:
+This program processes raw odds data to align it with the UFC event data, making it compatible for integration.
+
+The key preprocessing steps include:
 
 #### Filtering Odds Data by Date Range
 The program filters odds data to match the event date range from `cleaned_event_masterlist.csv`, ensuring that only relevant betting data is retained.
