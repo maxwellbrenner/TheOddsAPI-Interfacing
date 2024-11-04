@@ -6,11 +6,9 @@ This project provides a three-stage pipeline to interface with UFC data, preproc
 
 The project workflow is organized as follows:
 
-1. **API Interfacing**: The first notebook interfaces with `TheOddsAPI` to retrieve event, fight, and fighter odds information.
+1. **API Interfacing**: The first notebook interfaces with `TheOddsAPI` to retrieve `h2h` (head-to-head) UFC closing lines across a number of online sportsbooks.
 2. **Odds Preprocessing**: The second notebook preprocesses raw odds data by structuring, filtering, and calculating implied probabilities.
-3. **Appending Odds Data**: The final notebook integrates odds into the UFC data, appending calculated average and best odds for each fight.
-
-The output is an enriched dataset that enables analysis and insight into UFC events with corresponding betting odds.
+3. **Appending Odds Data**: The final notebook combines odds data and UFC performance statistisc into a structured csv, appending closing odds to each fight.
 
 ---
 
@@ -18,7 +16,8 @@ The output is an enriched dataset that enables analysis and insight into UFC eve
 
 ### 1. API Interfacing Program - `(1) API Interfacing.ipynb`
 
-This initial program interfaces with the UFC API to gather core data for each UFC event, fight, and fighter. It collects essential details such as:
+This program interfaces with `TheOddsAPI` to gather closing lines for each UFC fight dating back to `2020-06-06` -- First day `TheOddsAPI` began archiving UFC `h2h` odds. 
+It collects essential details such as:
 - **Event Details**: name, date, location.
 - **Fight Information**: winner, method of victory, round and time of victory, weight class, title fight status, and links to fight-specific stats.
 - **Fighter Statistics**: attributes like height, reach, and date of birth for each fighter in the event.
