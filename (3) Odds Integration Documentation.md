@@ -1,6 +1,6 @@
 # Odds Integration
 
-This script is designed to integrate historical betting odds with a UFC event dataset (`preprocessed_event_masterlist.csv`). By appending average and best odds data for each fight, this program enhances the dataset to support further analysis of betting trends and fighter performance.
+This script is designed to integrate historical betting odds with a UFC event dataset -- `preprocessed_event_masterlist.csv -- by appending average (across all `bookmakers`) and best (highest value) odds data to each fight.
 
 ---
 
@@ -10,7 +10,7 @@ The `main()` function orchestrates the workflow for integrating odds data into t
 
 The following steps outline each part of the process:
 
-1. **Load Event and Odds Data**: Loads the event dataset (`preprocessed_event_masterlist.csv`) and betting odds data (`mma_odds.csv`), and then filters the events by a specified date range.
+1. **Load Event and Odds Data**: Loads the event dataset `preprocessed_event_masterlist.csv` and betting odds data `mma_odds.csv`, and then filters the events by a specified date range.
 
 2. **Match Fighter Names**: Uses fuzzy matching to align fighter names from the masterlist with those in the odds dataset. If a direct match is unsuccessful, the program applies a relaxed matching strategy to improve accuracy.
 
