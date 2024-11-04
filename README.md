@@ -40,7 +40,7 @@ The data collected includes:
 - **Betting Odds**: Closing odds for each event, covering the head-to-head market and including details for each fighter's price (odds).
 - **Bookmaker Information**: Bookmaker details and the specific market for each betting outcome.
 
-### 2. Masterlist Preprocessing Program - `(2) Preprocessing Masterlist for Odds Data.ipynb`
+### 2. Masterlist Preprocessing Program - `(2) Preprocessing Masterlist for Odds Integration.ipynb`
 This program preprocesses UFC event data (`cleaned_event_masterlist.csv`) to standardize fighter names and drop nonessential columns, allowing later integration with betting odds data.
 
 1. **Load and Prepare Data**: It begins by loading the `cleaned_event_masterlist.csv` file, which contains UFC event, fight, and fighter details, into a DataFrame.
