@@ -35,11 +35,11 @@ The `main()` function orchestrates the workflow for odds retrieval and data savi
 - **Returns**: A list of unique event dates and the count of events within the range.
 
 ### 2. `get_historical_mma_odds(api_key, snapshot_date)`
-- **Description**: Retrieves historical UFC odds for a specified date and time from The Odds API, using American odds format.
+- **Description**: Retrieves historical UFC odds for a specified date and time from `TheOddsAPI`, using American odds format.
 - **Returns**: JSON response data containing the odds information or `None` if the request fails.
 
 ### 3. `save_odds_to_csv(odds_data, file_name)`
-- **Description**: Appends structured odds data to a CSV file with UTF-8 encoding. If the file is empty, it adds a header row.
+- **Description**: Appends structured odds data to a CSV file with `UTF-8` encoding. If the file is empty, it adds a header row.
 - **Returns**: None, as it writes directly to a CSV file.
 
 ### 4. `get_and_save_odds_for_dates(api_key, event_dates, start_date, end_date, limit=None)`
@@ -50,7 +50,9 @@ The `main()` function orchestrates the workflow for odds retrieval and data savi
 
 ## Execution Flow
 
-The program begins by executing the `main()` function, which handles the process of loading event dates, retrieving odds data from The Odds API, and saving the output to a CSV file. Below is a step-by-step breakdown of the process:
+The program begins by executing the `main()` function, which handles the process of loading event dates, retrieving odds data from `TheOddsAPI`, and saving the output to a CSV file. 
+
+Below is a step-by-step breakdown of the process:
 
 ### 1. Loading Event Master List
 
@@ -63,37 +65,42 @@ The `get_event_dates_between()` function filters the events in the master list t
 - **Input**: A DataFrame containing event dates, and `start_date`/`end_date` parameters.
 - **Output**: A list of unique event dates within the specified range, adjusted by the offset.
 
-### 3. Retrieving and Saving Historical Odds Data
+### 3. Retrieving Historical Odds Data
 
-The program iterates through each event date in the filtered list, calling `get_historical_mma_odds()` to retrieve the head-to-head odds data from The Odds API.
+The program iterates through each event date in the filtered list, calling `get_historical_mma_odds()` to retrieve the head-to-head odds data from `TheOddsAPI`.
 
 - **Input**: The API key and each event’s adjusted date (snapshot date).
 - **Output**: JSON data containing odds information for the specified date, or `None` if no data is available.
 
 #### Example of Retrieved Odds Data
-- **Timestamp**: `2024-08-24T12:00:00Z`
-- **Fighter A**: `"Fighter A Name"`
-- **Fighter B**: `"Fighter B Name"`
-- **Odds**: {"Bookmaker": `"DraftKings"`, "Odds Price": `-150`}
 
-#### Saving Odds Data to CSV
+For each event's retrieved odds data, the program appends structured data to a CSV file:
+
+| Timestamp                 | Home Team           | Away Team        | Commence Time          | Bookmaker | Market | Outcome Name          | Odds Price |
+|---------------------------|---------------------|------------------|------------------------|-----------|--------|-----------------------|------------|
+| 2024-08-24T11:55:39Z      | Albert Odzimkowski  | David Hosek      | 2024-08-24T17:00:00Z   | Bovada    | h2h    | Albert Odzimkowski    | -185       |
+| 2024-08-24T11:55:39Z      | Albert Odzimkowski  | David Hosek      | 2024-08-24T17:00:00Z   | Bovada    | h2h    | David Hosek           | 140        |
+| 2024-08-24T11:55:39Z      | Albert Odzimkowski  | David Hosek      | 2024-08-24T17:00:00Z   | LowVig.ag | h2h    | Albert Odzimkowski    | -175       |
+| 2024-08-24T11:55:39Z      | Albert Odzimkowski  | David Hosek      | 2024-08-24T17:00:00Z   | LowVig.ag | h2h    | David Hosek           | 145        |
+
+### 4. Saving Odds Data to CSV
 
 For each event's retrieved odds data, the program calls `save_odds_to_csv()`, which appends the structured data to a CSV file. If the file is empty, it adds a header row to label the columns.
 
 - **Input**: Odds data dictionary and the filename.
-- **Output**: A CSV file containing event date, fighter names, bookmakers, and odds prices.
-
----
+- **Output**: A CSV file containing event date, fighter names, bookmakers, and odds prices -> `mma_odds_({start_date} to {end_date}).csv`
 
 ## Final CSV Data Columns
 
 The CSV file produced by this program includes the following columns:
 
-- **Timestamp**: The date and time of the event.
+- **Timestamp**: The exact date and time when the odds were recorded.
 - **Home Team**: The name of `Fighter A`.
 - **Away Team**: The name of `Fighter B`.
+- **Commence Time**: The date and time of the event.
 - **Bookmaker**: The name of the bookmaker providing the odds.
-- **Odds Price**: The American odds price for the given fighter.
+- **Outcome Name**: The specific fighter to whom the **Odds Price** applies.
+- **Odds Price**: The fighter to whom the listed odds apply.
 - **Market**: The betting market (e.g., `h2h` for head-to-head).
 
-Each row in the CSV file represents a betting line for a specific event, covering the head-to-head market for both fighters and including details for each fighter's odds and the bookmakers. Calculations for implied probability are used internally to support accurate average odds processing but are **not** included in the final CSV output.
+Calculations for implied probability are used internally to support accurate average odds processing but are **not** included in the final CSV output.
