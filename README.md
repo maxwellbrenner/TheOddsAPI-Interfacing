@@ -31,7 +31,7 @@ It’s also possible to configure the program to retrieve odds data over the per
 
 4. **Save Odds Data to CSV**: All odds data is saved into a CSV file, dynamically named according to the specified date range -> `mma_odds_({start_date} to {end_date}).csv`
 
-## Data Collected
+### Data Collected
 
 The data collected includes:
 
