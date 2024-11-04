@@ -86,7 +86,7 @@ The project requires the following Python libraries:
 
 ## Example CSV Output
 
-The final output file, `event_masterlist_with_odds ({start_date_str} to {end_date_str}).csv`, includes structured columns with details for each event, fight, and betting odds, as outlined below:
+The final output file `event_masterlist_with_odds ({start_date_str} to {end_date_str}).csv` includes structured columns with details for each event, fight, and betting odds, as outlined below:
 
 ### Event and Fight Information
 - **event_name**: Name of the UFC event.
