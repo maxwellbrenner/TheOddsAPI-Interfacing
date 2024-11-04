@@ -1,4 +1,4 @@
-# Odds Integration Program
+# Odds Integration
 
 This script is designed to integrate historical betting odds with a UFC event dataset (`preprocessed_event_masterlist.csv`). By appending average and best odds data for each fight, this program enhances the dataset to support further analysis of betting trends and fighter performance.
 
