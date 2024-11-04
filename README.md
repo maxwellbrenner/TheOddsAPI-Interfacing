@@ -41,54 +41,49 @@ The data collected includes:
 - **Bookmaker Information**: Bookmaker details and the specific market for each betting outcome.
 
 ### 2. Masterlist Preprocessing Program - `(2) Preprocessing Masterlist for Odds Data.ipynb`
-This program preprocesses UFC event data (`cleaned_event_masterlist.csv`) to standardize fighter names and filter for essential columns, ensuring consistency and relevance in the dataset for further analysis and integration with betting odds data.
-
-The program performs the following primary tasks:
+This program preprocesses UFC event data (`cleaned_event_masterlist.csv`) to standardize fighter names and drop nonessential columns, allowing later integration with betting odds data.
 
 1. **Load and Prepare Data**: It begins by loading the `cleaned_event_masterlist.csv` file, which contains UFC event, fight, and fighter details, into a DataFrame.
 
 2. **Standardize Fighter Names**: Using a dictionary of name replacements, the program checks each fighter's name and replaces it if a more standardized or official name is available. This ensures that names match across different data sources and are consistent with official UFC records. If a name replacement affects the winner field, the program updates the winner’s name accordingly to maintain accuracy.
 
-3. **Filter for Essential Columns**: The program reduces the dataset to a focused set of columns, discarding any that are not directly relevant to the analysis. This simplifies the dataset and improves compatibility with other parts of the analysis pipeline.
+3. **Filter for Essential Columns**: The program reduces the dataset to a focused set of columns, discarding any that are not directly relevant to later analysis.
 
-4. **Save Cleaned Data**: The cleaned DataFrame is saved as a new CSV file, ready for use in subsequent analysis steps -> `preprocessed_event_masterlist.csv`
+4. **Save Cleaned Data**: The cleaned DataFrame is saved as a new CSV file, ready for use in subsequent analysis -> `preprocessed_event_masterlist.csv`
 
 ### 3. Odds Integration Program - `(3) Odds Integration.ipynb`
 
-In the final stage, this notebook matches and appends odds data to each fight in `cleaned_event_masterlist.csv`. It performs the following key functions:
+In the final stage, this notebook matches and appends (closing) odds in `mma_odds_({start_date} to {end_date}).csv` to each fight in `preprocessed_event_masterlist.csv`. 
 
-#### Matching Odds to Fights
-The program matches betting odds to each fight record based on:
-- **Event Date**: Ensuring odds data corresponds with the event date.
-- **Fighter Names**: Using fuzzy matching for consistent name matching.
+1. **Load and Filter Event Data**: Loads `preprocessed_event_masterlist.csv` and filters the data within a specified date range.
+   
+2. **Match Fighter Names**: For each fight, the program uses fuzzy name matching to align fighter names in the masterlist with those in the odds dataset. If direct matching fails, it applies a relaxed matching approach to compare first and last names separately, increasing the likelihood of a successful match.
 
-#### Calculating Average and Best Odds
-For each fight:
-- The program calculates average odds by averaging implied probabilities from multiple bookmakers.
-- It identifies the best available odds and their associated bookmakers.
+3. **Calculate Average and Best Odds**: After matching names, the program calculates both the average (across all bookmakers) and best (highest value) odds for each fighter.
 
-#### Final Output
-The program appends the calculated average and best odds to each fight and saves the final output as `event_masterlist_with_odds.csv`. This file includes:
-- **Event and Fight Details**: Basic details such as event name, fight outcome, and weight class.
-- **Betting Odds Data**: Average and best odds for each fighter with associated bookmaker details.
+4. **Identify and Handle Missing Data**: The program identifies any fights without matched odds and saves them separately for further inspection. Rows with missing odds are removed from the final cleaned dataset.
 
-This consolidated dataset is analysis-ready for sports modeling, statistical analysis, or integration with other datasets.
+5. **Save Processed Data**: The program saves two outputs:
+   - A file with rows containing missing odds data -> `fights_with_nan_odds.csv`
+   - A cleaned, complete dataset with average and best odds for each fight, dynamically named based on the date range -> `event_masterlist_with_odds ({start_date_str} to {end_date_str}).csv`
 
 ---
 
 ## Requirements
 
 The project requires the following Python libraries:
-- `requests`: For interfacing with the UFC API.
-- `BeautifulSoup` from `bs4`: For parsing HTML content from the API.
-- `pandas`: For data handling, cleaning, and preprocessing.
-- `datetime`: For managing date formats in event and odds data.
+- **pandas**: The program uses `pandas` extensively for loading, manipulating, and filtering data in DataFrames.
+- **requests**: Essential for making HTTP requests to The Odds API to fetch historical MMA odds.
+- **csv**: Part of the standard Python library; used to handle CSV file operations for saving odds data and loading data for processing.
+- **datetime**: Also part of the Python standard library; used to manipulate and format dates, apply offsets, and filter by date range.
+- **statistics**: This module provides functions for statistical calculations, specifically `mean` for calculating average probabilities.
+- **difflib**: A standard library module used for calculating similarity ratios between fighter names to facilitate fuzzy matching.
 
 ---
 
 ## Example CSV Output
 
-The final output file, `event_masterlist_with_odds.csv`, includes structured columns with details for each event, fight, and betting odds, as outlined below:
+The final output file, `event_masterlist_with_odds ({start_date_str} to {end_date_str}).csv`, includes structured columns with details for each event, fight, and betting odds, as outlined below:
 
 ### Event and Fight Information
 - **event_name**: Name of the UFC event.
