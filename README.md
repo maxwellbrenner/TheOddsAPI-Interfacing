@@ -27,7 +27,7 @@ It’s also possible to configure the program to retrieve odds data over the per
 3. **Retrieve Historical Odds**: For each filtered event date, the program queries TheOddsAPI to retrieve the historical odds data for that date. The odds are retrieved in the "head-to-head" format and include details such as:
    - **Event Date and Time**: Specific timestamps of the events.
    - **Fighter Odds**: Head-to-head betting lines for each fighter.
-   - **Bookmaker and Market Data**: Information about the bookmakers providing odds and the types of odds markets available (e.g., head-to-head).
+   - **Bookmaker and Market Data**: Information about the bookmakers providing odds and the types of odds markets available (`h2h`).
 
 4. **Save Odds Data to CSV**: All odds data is saved into a CSV file, dynamically named according to the specified date range -> `mma_odds_({start_date} to {end_date}).csv`
 
