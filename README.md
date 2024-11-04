@@ -18,7 +18,7 @@ The project workflow is organized as follows:
 
 This program interfaces with `TheOddsAPI` to retrieve closing lines for UFC fights, covering events from `June 6, 2020` onward – the first date `TheOddsAPI` began archiving UFC `head-to-head` odds.
 
-It’s also possible to configure the program to retrieve odds data over the period leading up to each fight. This approach provides a detailed view of betting trends and allows for analysis of pre-fight market fluctuation.
+It’s also possible to configure the program to retrieve odds data over the period leading up to each fight. This approach provides a detailed view of betting trends and allows for analysis of pre-fight market fluctuation, though it requires significantly more API tokens.
 
 1. **Load Event Master List**: It begins by loading an existing `cleaned_event_masterlist.csv` file. This file contains a historical list of UFC event dates, which are essential for cross-referencing with TheOddsAPI data.
    
