@@ -6,7 +6,7 @@ This project provides a three-stage pipeline to interface with UFC data, preproc
 
 The project workflow is organized as follows:
 
-1. **API Interfacing**: The first notebook interfaces with TheOddsAPI to retrieve event, fight, and fighter information.
+1. **API Interfacing**: The first notebook interfaces with `TheOddsAPI` to retrieve event, fight, and fighter odds information.
 2. **Odds Preprocessing**: The second notebook preprocesses raw odds data by structuring, filtering, and calculating implied probabilities.
 3. **Appending Odds Data**: The final notebook integrates odds into the UFC data, appending calculated average and best odds for each fight.
 
