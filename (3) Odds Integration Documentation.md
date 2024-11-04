@@ -96,17 +96,15 @@ Any fights without matched odds are flagged, and the rows are saved to `fights_w
 
 After processing, the program saves the cleaned dataset with appended odds data to a dynamically named file based on the date range.
 
----
+#### Example of Final CSV Output
 
-## Example of Final CSV Output
-
-The final output file (`event_masterlist_with_odds ({start_date} to {end_date}).csv`) includes columns with fight details and betting odds data:
+The final output file `event_masterlist_with_odds ({start_date} to {end_date}).csv` includes columns with fight details and betting odds data:
 
 | Timestamp               | Home Team          | Away Team       | Commence Time         | Bookmaker | Market | Outcome Name       | Odds Price | Fighter A Avg Odds | Fighter A Best Odds | Fighter B Avg Odds | Fighter B Best Odds |
 |-------------------------|--------------------|-----------------|-----------------------|-----------|--------|--------------------|------------|--------------------|---------------------------------------|---------------------|---------------------|
 | 2024-08-24T11:55:39Z    | Albert Odzimkowski | David Hosek     | 2024-08-24T17:00:00Z  | Bovada    | h2h    | Albert Odzimkowski | -185       | -180               | {'Odds': -185, 'Bookmaker': 'Bovada'} | -140               | {'Odds': -140, 'Bookmaker': 'LowVig.ag'} |
 
-### Output File Descriptions
+#### Output File Descriptions
 
 - **`fights_with_nan_odds.csv`**: Contains fights that could not be matched with odds data for review.
 - **`event_masterlist_with_odds ({start_date} to {end_date}).csv`**: The final cleaned dataset with appended average and best odds for each fight.
