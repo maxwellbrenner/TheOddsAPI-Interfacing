@@ -64,8 +64,10 @@ In the final stage, this notebook matches and appends (closing) odds in `mma_odd
 4. **Identify and Handle Missing Data**: The program identifies any fights without matched odds and saves them separately for further inspection. Rows with missing odds are removed from the final cleaned dataset.
 
 5. **Save Processed Data**: The program saves two outputs:
-   - A file with rows containing missing odds data -> `fights_with_nan_odds.csv`
-   - A cleaned, complete dataset with average and best odds for each fight, dynamically named based on the date range -> `event_masterlist_with_odds ({start_date_str} to {end_date_str}).csv`
+   - A file with rows containing missing odds data
+      - `fights_with_nan_odds.csv`
+   - A cleaned, complete dataset with average and best odds for each fight, dynamically named based on the date range
+      - `event_masterlist_with_odds ({start_date_str} to {end_date_str}).csv`
 
 ---
 
