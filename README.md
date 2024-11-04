@@ -49,7 +49,8 @@ This program preprocesses UFC event data (`cleaned_event_masterlist.csv`) to sta
 
 3. **Filter for Essential Columns**: The program reduces the dataset to a focused set of columns, discarding any that are not directly relevant to later analysis.
 
-4. **Save Cleaned Data**: The cleaned DataFrame is saved as a new CSV file, ready for use in subsequent analysis -> `preprocessed_event_masterlist.csv`
+4. **Save Cleaned Data**: The cleaned DataFrame is saved as a new CSV file, ready for use in subsequent analysis
+      - `preprocessed_event_masterlist.csv`
 
 ### 3. Odds Integration Program - `(3) Odds Integration.ipynb`
 
