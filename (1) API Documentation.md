@@ -93,14 +93,15 @@ For each event's retrieved odds data, the program calls `save_odds_to_csv()`, wh
 #### Final CSV Data Columns
 
 The CSV file produced by this program includes the following columns:
-
+  
 - **Timestamp**: The exact date and time when the odds were recorded.
-- **Home Team**: The name of `Fighter A`.
-- **Away Team**: The name of `Fighter B`.
+- **Home Team**: The name of `Fighter A` (e.g., `Albert Odzimkowski`).
+- **Away Team**: The name of `Fighter B` (e.g., `David Hosek`).
 - **Commence Time**: The date and time of the event.
-- **Bookmaker**: The name of the bookmaker providing the odds.
+- **Bookmaker**: The name of the bookmaker providing the odds (e.g., `Bovada`, `LowVig.ag`).
+- **Market**: The betting market type (e.g., `h2h` for head-to-head).
 - **Outcome Name**: The specific fighter to whom the **Odds Price** applies.
-- **Odds Price**: The fighter to whom the listed odds apply.
-- **Market**: The betting market (e.g., `h2h` for head-to-head).
+- **Odds Price**: The American odds for the specified fighter; negative values indicate the favorite, and positive values indicate the underdog.
+
 
 Calculations for implied probability are used internally to support accurate average odds processing but are **not** included in the final CSV output.
