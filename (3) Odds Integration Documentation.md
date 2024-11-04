@@ -107,9 +107,35 @@ Each row in the final CSV output represents a single fight, including event deta
 |------------------------------------|--------------|---------------------------|---------------|------------------|------------------|-------------|-----------------------|------------------|-----------------|-------------|-----------------|-------------|--------|----------------------------------------------------------------------------------------------------------------------------|---------------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------|---------------------|------------------------------------|
 | UFC Fight Night: Cannonier vs. Borralho | 2024-08-24   | Las Vegas, Nevada, USA    | Caio Borralho | Caio Borralho    | Jared Cannonier  | Middleweight | Decision - Unanimous | 5                | 5:00            | 5           | Dan Miragliotta | False       | men    | [{"Bookmaker": "Caesars", "Odds Price": -275}, {"Bookmaker": "BetRivers", "Odds Price": -250}, ...] | -259.0              | {"Odds": -245, "Bookmaker": "FanDuel"} | [{"Bookmaker": "Caesars", "Odds Price": 225}, {"Bookmaker": "BetRivers", "Odds Price": 200}, ...] | 212.0               | {"Odds": 225, "Bookmaker": "Caesars"} |
 
+### Field Descriptions
+
+- **event_name**: Name of the UFC event (e.g., "UFC Fight Night: Cannonier vs. Borralho").
+- **event_date**: Date of the event (e.g., `2024-08-24`).
+- **event_location**: Location of the event (e.g., "Las Vegas, Nevada, USA").
+- **winner**: Name of the fight’s winner (e.g., "Caio Borralho").
+- **fighter_a_name**: Name of Fighter A (e.g., "Caio Borralho").
+- **fighter_b_name**: Name of Fighter B (e.g., "Jared Cannonier").
+- **weightclass**: Weight class of the fight (e.g., "Middleweight").
+- **method_of_victory**: Method by which the fight was won (e.g., "Decision - Unanimous").
+- **round_of_victory**: Round in which the fight ended (e.g., `5`).
+- **time_of_victory**: Time remaining when the fight ended (e.g., `5:00`).
+- **time_format**: Format of the fight rounds (e.g., `5` rounds).
+- **referee**: Referee officiating the fight (e.g., "Dan Miragliotta").
+- **title_fight**: Indicates if the fight was a title match (e.g., `False`).
+- **gender**: Gender category of the fight (e.g., "men" or "women").
+
+#### Odds Data for Each Fighter
+
+- **Fighter A Odds**: List of betting odds for Fighter A across different bookmakers, showing each bookmaker's name and the American odds price (e.g., `[{"Bookmaker": "Caesars", "Odds Price": -275}, ...]`).
+- **Fighter A Avg Odds**: Average American odds for Fighter A calculated across all bookmakers (e.g., `-259.0`).
+- **Fighter A Best Odds**: Best odds available for Fighter A, including the bookmaker offering them (e.g., `{"Odds": -245, "Bookmaker": "FanDuel"}`).
+- **Fighter B Odds**: List of betting odds for Fighter B, structured similarly to Fighter A’s odds data (e.g., `[{"Bookmaker": "Caesars", "Odds Price": 225}, ...]`).
+- **Fighter B Avg Odds**: Average American odds for Fighter B across all bookmakers (e.g., `212.0`).
+- **Fighter B Best Odds**: Best odds for Fighter B, including the bookmaker (e.g., `{"Odds": 225, "Bookmaker": "Caesars"}`). 
+
 #### Output File Descriptions
 
 - **`fights_with_nan_odds.csv`**: Contains fights that could not be matched with odds data for review.
-- **`event_masterlist_with_odds ({start_date} to {end_date}).csv`**: The final cleaned dataset with appended average and best odds for each fight.
+- **`event_masterlist_with_odds ({start_date} to {end_date}).csv`**: The final dataset with odds information for each fight.
 
 This processed dataset is now ready for detailed betting trend analysis and performance evaluation.
