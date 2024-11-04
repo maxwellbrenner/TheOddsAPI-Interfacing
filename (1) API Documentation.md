@@ -90,7 +90,7 @@ For each event's retrieved odds data, the program calls `save_odds_to_csv()`, wh
 - **Input**: Odds data dictionary and the filename.
 - **Output**: A CSV file containing event date, fighter names, bookmakers, and odds prices -> `mma_odds_({start_date} to {end_date}).csv`
 
-## Final CSV Data Columns
+#### Final CSV Data Columns
 
 The CSV file produced by this program includes the following columns:
 
