@@ -1,4 +1,4 @@
-# Preprocessing `event_masterlist_with_odds` for UFC Odds Data
+# Odds Integration
 
 This script processes a UFC event dataset (`preprocessed_event_masterlist.csv`) along with an odds dataset (`mma_odds.csv`) to integrate betting odds data into the event records. It standardizes fighter names, calculates average and best odds per fighter, and identifies any missing values in the odds data. This final dataset is streamlined for further analysis or integration with other data sources.
 
