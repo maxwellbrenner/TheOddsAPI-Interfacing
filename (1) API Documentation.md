@@ -1,6 +1,8 @@
 # API Interfacing (`TheOddsAPI`) | Historical UFC Odds Data
 
-This program interfaces with `TheOddsAPI` to retrieve head-to-head (h2h) closing lines for UFC events across a range of online sportsbooks, covering events from June 6, 2020, onward – the first date TheOddsAPI began archiving UFC h2h odds. The program allows analysts to collect historical betting odds and save this data to a CSV file for further analysis.
+This program interfaces with `TheOddsAPI` to retrieve head-to-head (`h2h`) closing lines for UFC events across a number of online sportsbooks, covering events from `June 6, 2020` onward – the first date `TheOddsAPI` began archiving UFC `h2h` odds. 
+
+The program allows analysts to collect historical betting odds and save this data to a CSV file for further analysis.
 
 ### Configurable Retrieval Periods
 By default, the program retrieves only the closing lines for each event. However, it can be configured to pull odds data over the period leading up to each fight, providing insight into betting trends and pre-fight market fluctuations. This expanded data retrieval option allows for more detailed analysis but requires a greater number of API tokens due to the higher number of queries.
@@ -11,17 +13,17 @@ By default, the program retrieves only the closing lines for each event. However
 
 The `main()` function orchestrates the workflow for odds retrieval and data saving, completing the following tasks:
 
-1. **Load Event Master List**: Loads an existing `cleaned_event_masterlist.csv` file, which contains a historical list of UFC event dates. These dates are used to cross-reference with TheOddsAPI data.
+1. **Load Event Master List**: Loads an existing `cleaned_event_masterlist.csv` file, which contains a historical list of UFC event dates. These dates are used to cross-reference with `TheOddsAPI` data.
 
 2. **Filter Event Dates by Date Range**: Filters event dates within a specified date range, applying a 12-hour offset to each date to standardize event times across time zones.
 
-3. **Retrieve Historical Odds**: For each filtered event date, the program queries TheOddsAPI to retrieve historical head-to-head odds data, including details on:
+3. **Retrieve Historical Odds**: For each filtered event date, the program queries `TheOddsAPI` to retrieve historical `head-to-head` odds data, including details on:
 
    - **Event Date and Time**: Specific timestamps for each event.
-   - **Fighter Odds**: Head-to-head betting lines for each fighter.
-   - **Bookmaker and Market Data**: Details on the bookmakers providing odds and the types of odds markets available (e.g., h2h).
+   - **Fighter Odds**: `Head-to-head` betting lines for each fighter.
+   - **Bookmaker and Market Data**: Details on the bookmakers providing odds and the types of odds markets available (`h2h`).
 
-4. **Save Odds Data to CSV**: All retrieved odds data is saved into a CSV file, dynamically named based on the specified date range (e.g., `mma_odds_({start_date} to {end_date}).csv`).
+4. **Save Odds Data to CSV**: All retrieved odds data is saved into a CSV file, dynamically named based on the specified date range -> (`mma_odds_({start_date} to {end_date}).csv`)
 
 ---
 
