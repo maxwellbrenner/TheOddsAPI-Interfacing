@@ -1,6 +1,6 @@
 # Odds Integration
 
-This script is designed to integrate historical betting odds with a UFC event dataset -- `preprocessed_event_masterlist.csv -- by appending average (across all `bookmakers`) and best (highest value) odds data to each fight.
+This script is designed to integrate historical betting odds with a UFC event dataset by appending odds data to each fight.
 
 ---
 
@@ -102,8 +102,8 @@ After processing, the program saves the cleaned dataset with appended odds data 
 
 The final output file (`event_masterlist_with_odds ({start_date} to {end_date}).csv`) includes columns with fight details and betting odds data:
 
-| Timestamp               | Home Team          | Away Team       | Commence Time         | Bookmaker | Market | Outcome Name       | Odds Price | Fighter A Avg Odds | Fighter A Best Odds | Fighter B Avg Odds | Fighter B Best Odds |
-|-------------------------|--------------------|-----------------|-----------------------|-----------|--------|--------------------|------------|---------------------|---------------------|---------------------|---------------------|
+| Timestamp               | Home Team          | Away Team       | Commence Time         | Bookmaker | Market | Outcome Name       | Odds Price | Fighter A Avg Odds | Fighter A Best Odds                   | Fighter B Avg Odds | Fighter B Best Odds |
+|-------------------------|--------------------|-----------------|-----------------------|-----------|--------|--------------------|------------|--------------------|---------------------------------------|---------------------|---------------------|
 | 2024-08-24T11:55:39Z    | Albert Odzimkowski | David Hosek     | 2024-08-24T17:00:00Z  | Bovada    | h2h    | Albert Odzimkowski | -185       | -180               | {'Odds': -185, 'Bookmaker': 'Bovada'} | -140               | {'Odds': -140, 'Bookmaker': 'LowVig.ag'} |
 
 ### Output File Descriptions
