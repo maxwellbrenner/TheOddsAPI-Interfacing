@@ -83,6 +83,16 @@ For each event's retrieved odds data, the program appends structured data to a C
 | 2024-08-24T11:55:39Z      | Albert Odzimkowski  | David Hosek      | 2024-08-24T17:00:00Z   | LowVig.ag | h2h    | Albert Odzimkowski    | -175       |
 | 2024-08-24T11:55:39Z      | Albert Odzimkowski  | David Hosek      | 2024-08-24T17:00:00Z   | LowVig.ag | h2h    | David Hosek           | 145        |
 
+In this example:
+- **Timestamp**: Records the date and time at which the odds were retrieved.
+- **Home Team**: The name of `Fighter A` (Albert Odzimkowski in this case).
+- **Away Team**: The name of `Fighter B` (David Hosek in this case).
+- **Commence Time**: The scheduled date and time of the event.
+- **Bookmaker**: The sportsbook offering the odds (e.g., Bovada or LowVig.ag).
+- **Market**: The betting market type, with `h2h` indicating a head-to-head market.
+- **Outcome Name**: The fighter to whom the listed odds price applies.
+- **Odds Price**: The American odds for the specific fighter; negative values indicate the favorite, while positive values indicate the underdog.
+
 ### 4. Saving Odds Data to CSV
 
 For each event's retrieved odds data, the program calls `save_odds_to_csv()`, which appends the structured data to a CSV file. If the file is empty, it adds a header row to label the columns.
