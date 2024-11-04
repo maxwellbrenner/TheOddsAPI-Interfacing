@@ -29,7 +29,8 @@ It’s also possible to configure the program to retrieve odds data over the per
    - **Fighter Odds**: Head-to-head betting lines for each fighter.
    - **Bookmaker and Market Data**: Information about the bookmakers providing odds and the types of odds markets available (`h2h`).
 
-4. **Save Odds Data to CSV**: All odds data is saved into a CSV file, dynamically named according to the specified date range -> `mma_odds_({start_date} to {end_date}).csv`
+4. **Save Odds Data to CSV**: All odds data is saved into a CSV file, dynamically named according to the specified date range
+      -> `mma_odds_({start_date} to {end_date}).csv`
 
 ### Data Collected
 
