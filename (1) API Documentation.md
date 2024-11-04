@@ -23,7 +23,8 @@ The `main()` function orchestrates the workflow for odds retrieval and data savi
    - **Fighter Odds**: `Head-to-head` betting lines for each fighter.
    - **Bookmaker and Market Data**: Details on the bookmakers providing odds and the types of odds markets available (`h2h`).
 
-4. **Save Odds Data to CSV**: All retrieved odds data is saved into a CSV file, dynamically named based on the specified date range -> (`mma_odds_({start_date} to {end_date}).csv`)
+4. **Save Odds Data to CSV**: All retrieved odds data is saved into a CSV file, dynamically named based on the specified date range
+      - (`mma_odds_({start_date} to {end_date}).csv`)
 
 ---
 
