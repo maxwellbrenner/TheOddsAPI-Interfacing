@@ -19,9 +19,9 @@ The following steps outline each part of the process:
 4. **Identify and Handle Missing Odds**: Any fights missing matched odds are flagged and saved in a separate file for review. These rows are removed from the final output.
 
 5. **Save Processed Data**: Exports two files:
-   - A file with fights that could not be matched with odds
+      - A file with fights that could not be matched with odds
          - `fights_with_nan_odds.csv`
-   - A cleaned dataset with appended odds data, dynamically named based on the specified date range
+      - A cleaned dataset with appended odds data, dynamically named based on the specified date range
          - `event_masterlist_with_odds ({start_date} to {end_date}).csv`
 
 ---
